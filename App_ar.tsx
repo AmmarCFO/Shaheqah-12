@@ -314,9 +314,9 @@ const App_ar: React.FC<{ onToggleLanguage: () => void }> = ({ onToggleLanguage }
   // Build Arabic ledger items
   const ownerPercent = effectiveRevenue > 0 ? Math.round((effectiveNetIncome / effectiveRevenue) * 100) : 0;
   const ledgerItems = [
-    { category: `رسوم إدارة مَثوى (${Math.round(mabaatPercentage * 100).toLocaleString('ar-SA')}٪)`, amount: effectiveMabaat, color: 'bg-purple-400' },
     ...(otaCommissionAmount > 0 ? [{ category: 'عمولة منصات الحجز OTA (١٥٪ من قصير الأجل)', amount: otaCommissionAmount, color: 'bg-amber-500' }] : []),
     ...(vatAmount > 0 ? [{ category: 'ضريبة القيمة المضافة (١٥٪)', amount: vatAmount, color: 'bg-amber-400' }] : []),
+    { category: `رسوم إدارة مَثوى (${Math.round(mabaatPercentage * 100).toLocaleString('ar-SA')}٪)`, amount: effectiveMabaat, color: 'bg-purple-400' },
     { category: `صافي الدخل الصافي للمالك الأساسي (حصة ${ownerPercent.toLocaleString('ar-SA')}٪)`, amount: effectiveNetIncome, color: 'bg-emerald-400', highlight: true }
   ];
 

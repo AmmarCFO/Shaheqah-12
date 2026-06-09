@@ -281,9 +281,9 @@ const App_en: React.FC<{ onToggleLanguage: () => void }> = ({ onToggleLanguage }
   // Build ledger items
   const ownerPercent = effectiveRevenue > 0 ? Math.round((effectiveNetIncome / effectiveRevenue) * 100) : 0;
   const ledgerItems = [
-    { category: `Mathwaa Management Fee (${Math.round(mabaatPercentage * 100)}%)`, amount: effectiveMabaat, color: 'bg-purple-400' },
     ...(otaCommissionAmount > 0 ? [{ category: 'OTA Booking Commission (15% of STR)', amount: otaCommissionAmount, color: 'bg-amber-500' }] : []),
     ...(vatAmount > 0 ? [{ category: 'VAT (15%)', amount: vatAmount, color: 'bg-[#D4AF37]' }] : []),
+    { category: `Mathwaa Management Fee (${Math.round(mabaatPercentage * 100)}%)`, amount: effectiveMabaat, color: 'bg-purple-400' },
     { category: `Owner's Net Net Income (${ownerPercent}% share)`, amount: effectiveNetIncome, color: 'bg-emerald-400', highlight: true }
   ];
 
