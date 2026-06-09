@@ -65,14 +65,14 @@ const TEXTS = {
 };
 
 const DETAILED_ROWS = [
-  { segmentKey: '1br_str_peak', segmentEn: '1BR STR (Peak Season)', segmentAr: 'غرفة وصالة قصير الأجل (موسم الذروة)', units: 8, peak: 5, off: 0, pessimistic: 798000, base: 840000, optimistic: 882000 },
-  { segmentKey: '1br_str_off', segmentEn: '1BR STR (Off Season)', segmentAr: 'غرفة وصالة قصير الأجل (موسم عادي)', units: 8, peak: 0, off: 7, pessimistic: 680960, base: 716800, optimistic: 752640 },
-  { segmentKey: '1br_ltr_peak', segmentEn: '1BR LTR (Peak Season)', segmentAr: 'غرفة وصالة طويل الأجل (موسم الذروة)', units: 4, peak: 5, off: 0, pessimistic: 342000, base: 360000, optimistic: 378000 },
-  { segmentKey: '1br_ltr_off', segmentEn: '1BR LTR (Off Season)', segmentAr: 'غرفة وصالة طويل الأجل (موسم عادي)', units: 4, peak: 0, off: 7, pessimistic: 226100, base: 238000, optimistic: 249900 },
-  { segmentKey: '2br_str_peak', segmentEn: '2BR STR (Peak Season)', segmentAr: 'غرفتين وصالة قصير الأجل (موسم الذروة)', units: 5, peak: 5, off: 0, pessimistic: 665000, base: 700000, optimistic: 735000 },
-  { segmentKey: '2br_str_off', segmentEn: '2BR STR (Off Season)', segmentAr: 'غرفتين وصالة قصير الأجل (موسم عادي)', units: 5, peak: 0, off: 7, pessimistic: 681625, base: 717500, optimistic: 753375 },
-  { segmentKey: '2br_ltr_peak', segmentEn: '2BR LTR (Peak Season)', segmentAr: 'غرفتين وصالة طويل الأجل (موسم الذروة)', units: 3, peak: 5, off: 0, pessimistic: 363375, base: 382500, optimistic: 401625 },
-  { segmentKey: '2br_ltr_off', segmentEn: '2BR LTR (Off Season)', segmentAr: 'غرفتين وصالة طويل الأجل (موسم عادي)', units: 3, peak: 0, off: 7, pessimistic: 359100, base: 378000, optimistic: 396900 }
+  { segmentKey: '1br_str_peak', segmentEn: '1BR STR (Peak Season)', segmentAr: 'غرفة وصالة قصير الأجل (موسم الذروة)', units: 8, peak: 5, off: 0, pessimistic: 610470, base: 642600, optimistic: 674730 },
+  { segmentKey: '1br_str_off', segmentEn: '1BR STR (Off Season)', segmentAr: 'غرفة وصالة قصير الأجل (موسم عادي)', units: 8, peak: 0, off: 7, pessimistic: 520934, base: 548352, optimistic: 575770 },
+  { segmentKey: '1br_ltr_peak', segmentEn: '1BR LTR (Peak Season)', segmentAr: 'غرفة وصالة طويل الأجل (موسم الذروة)', units: 4, peak: 5, off: 0, pessimistic: 307800, base: 324000, optimistic: 340200 },
+  { segmentKey: '1br_ltr_off', segmentEn: '1BR LTR (Off Season)', segmentAr: 'غرفة وصالة طويل الأجل (موسم عادي)', units: 4, peak: 0, off: 7, pessimistic: 203490, base: 214200, optimistic: 224910 },
+  { segmentKey: '2br_str_peak', segmentEn: '2BR STR (Peak Season)', segmentAr: 'غرفتين وصالة قصير الأجل (موسم الذروة)', units: 5, peak: 5, off: 0, pessimistic: 508725, base: 535500, optimistic: 562275 },
+  { segmentKey: '2br_str_off', segmentEn: '2BR STR (Off Season)', segmentAr: 'غرفتين وصالة قصير الأجل (موسم عادي)', units: 5, peak: 0, off: 7, pessimistic: 521443, base: 548888, optimistic: 576332 },
+  { segmentKey: '2br_ltr_peak', segmentEn: '2BR LTR (Peak Season)', segmentAr: 'غرفتين وصالة طويل الأجل (موسم الذروة)', units: 3, peak: 5, off: 0, pessimistic: 327038, base: 344250, optimistic: 361463 },
+  { segmentKey: '2br_ltr_off', segmentEn: '2BR LTR (Off Season)', segmentAr: 'غرفتين وصالة طويل الأجل (موسم عادي)', units: 3, peak: 0, off: 7, pessimistic: 323190, base: 340200, optimistic: 357210 }
 ];
 
 const DetailedAssumptions: React.FC<DetailedAssumptionsProps> = ({ lang }) => {
@@ -154,23 +154,23 @@ const DetailedAssumptions: React.FC<DetailedAssumptionsProps> = ({ lang }) => {
               <tbody className="divide-y divide-gray-50">
                 <tr className="hover:bg-gray-50/50">
                   <td className="py-3 font-semibold text-gray-700">{t.ltrOff}</td>
-                  <td className="py-3 text-center font-bold text-gray-900 tabular-nums">8,500 <span className="text-[10px] text-gray-400 font-normal">/mo</span></td>
-                  <td className="py-3 text-center font-bold text-gray-900 tabular-nums">18,000 <span className="text-[10px] text-gray-400 font-normal">/mo</span></td>
+                  <td className="py-3 text-center font-bold text-gray-900 tabular-nums">7,650 <span className="text-[10px] text-gray-400 font-normal">/mo</span></td>
+                  <td className="py-3 text-center font-bold text-gray-900 tabular-nums">16,200 <span className="text-[10px] text-gray-400 font-normal">/mo</span></td>
                 </tr>
                 <tr className="hover:bg-gray-50/50">
                   <td className="py-3 font-semibold text-gray-700">{t.ltrPeak}</td>
-                  <td className="py-3 text-center font-bold text-gray-900 tabular-nums">18,000 <span className="text-[10px] text-gray-400 font-normal">/mo</span></td>
-                  <td className="py-3 text-center font-bold text-gray-900 tabular-nums">25,500 <span className="text-[10px] text-gray-400 font-normal">/mo</span></td>
+                  <td className="py-3 text-center font-bold text-gray-900 tabular-nums">16,200 <span className="text-[10px] text-gray-400 font-normal">/mo</span></td>
+                  <td className="py-3 text-center font-bold text-gray-900 tabular-nums">22,950 <span className="text-[10px] text-gray-400 font-normal">/mo</span></td>
                 </tr>
                 <tr className="hover:bg-gray-50/50">
                   <td className="py-3 font-semibold text-gray-700">{t.strOff}</td>
-                  <td className="py-3 text-center font-bold text-gray-900 tabular-nums">12,800 <span className="text-[10px] text-gray-400 font-normal">/mo</span></td>
-                  <td className="py-3 text-center font-bold text-gray-900 tabular-nums">20,500 <span className="text-[10px] text-gray-400 font-normal">/mo</span></td>
+                  <td className="py-3 text-center font-bold text-gray-900 tabular-nums">11,520 <span className="text-[10px] text-gray-400 font-normal">/mo</span></td>
+                  <td className="py-3 text-center font-bold text-gray-900 tabular-nums">18,450 <span className="text-[10px] text-gray-400 font-normal">/mo</span></td>
                 </tr>
                 <tr className="hover:bg-gray-50/50">
                   <td className="py-3 font-semibold text-gray-700">{t.strPeak}</td>
-                  <td className="py-3 text-center font-bold text-gray-900 tabular-nums">21,000 <span className="text-[10px] text-gray-400 font-normal">/mo</span></td>
-                  <td className="py-3 text-center font-bold text-gray-900 tabular-nums">28,000 <span className="text-[10px] text-gray-400 font-normal">/mo</span></td>
+                  <td className="py-3 text-center font-bold text-gray-900 tabular-nums">18,900 <span className="text-[10px] text-gray-400 font-normal">/mo</span></td>
+                  <td className="py-3 text-center font-bold text-gray-900 tabular-nums">25,200 <span className="text-[10px] text-gray-400 font-normal">/mo</span></td>
                 </tr>
               </tbody>
             </table>
@@ -230,13 +230,13 @@ const DetailedAssumptions: React.FC<DetailedAssumptionsProps> = ({ lang }) => {
                 <td className="py-4 px-2 font-bold text-purple-300 tabular-nums">5</td>
                 <td className="py-4 px-2 font-bold text-gray-300 tabular-nums">7</td>
                 <td className="py-4 px-4 text-right rtl:text-left font-black tabular-nums text-gray-200">
-                  4,116,160
+                  3,323,090
                 </td>
                 <td className="py-4 px-4 text-right rtl:text-left font-extrabold tabular-nums text-purple-100 bg-purple-950">
-                  4,332,800
+                  3,497,990
                 </td>
                 <td className="py-4 px-4 text-right rtl:text-left font-black tabular-nums text-emerald-300 rounded-r-2xl rtl:rounded-l-2xl rtl:rounded-r-none">
-                  4,549,440
+                  3,672,890
                 </td>
               </tr>
             </tfoot>

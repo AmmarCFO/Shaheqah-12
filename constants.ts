@@ -10,22 +10,22 @@ export const SCENARIOS: Scenario[] = [
     
     financials: {
         worst: {
-            revenue: 4116160, 
-            mabaatShare: 4116160 * 0.30, 
-            netIncome: 4116160 * 0.70, 
-            roi: 13.7
+            revenue: 3704544, 
+            mabaatShare: 1111363, 
+            netIncome: 2211727, 
+            roi: 7.4
         },
         base: {
-            revenue: 4332800,
-            mabaatShare: 4332800 * 0.30, 
-            netIncome: 4332800 * 0.70, 
-            roi: 14.4
+            revenue: 3899520,
+            mabaatShare: 1169856, 
+            netIncome: 2328133, 
+            roi: 7.8
         },
         best: {
-            revenue: 4549440, 
-            mabaatShare: 4549440 * 0.30, 
-            netIncome: 4549440 * 0.70, 
-            roi: 15.2
+            revenue: 4094496, 
+            mabaatShare: 1228349, 
+            netIncome: 2444540, 
+            roi: 8.2
         }
     },
 
@@ -39,26 +39,26 @@ export const SCENARIOS: Scenario[] = [
         { 
             name: '1 Bedroom (Short-Term Rental) - 8 Units', 
             count: 8, 
-            avgPrice: 194600, // (21000*5 + 12800*7)
-            priceRange: { min: 184870, avg: 194600, max: 204330 }, 
+            avgPrice: 175140, // Reduced from 194600
+            priceRange: { min: 166383, avg: 175140, max: 183897 }, 
         },
         { 
             name: '1 Bedroom (Long-Term Rental) - 4 Units', 
             count: 4, 
-            avgPrice: 149500, // (18000*5 + 8500*7)
-            priceRange: { min: 142025, avg: 149500, max: 156975 }, 
+            avgPrice: 134550, // Reduced from 149500
+            priceRange: { min: 127823, avg: 134550, max: 141278 }, 
         },
         { 
             name: '2 Bedroom (Short-Term Rental) - 5 Units', 
             count: 5, 
-            avgPrice: 283500, // (28000*5 + 20500*7)
-            priceRange: { min: 269325, avg: 283500, max: 297675 }, 
+            avgPrice: 255150, // Reduced from 283500
+            priceRange: { min: 242393, avg: 255150, max: 267908 }, 
         },
         { 
             name: '2 Bedroom (Long-Term Rental) - 3 Units', 
             count: 3, 
-            avgPrice: 253500, // (25500*5 + 18000*7)
-            priceRange: { min: 240825, avg: 253500, max: 266175 }, 
+            avgPrice: 228150, // Reduced from 253500
+            priceRange: { min: 216743, avg: 228150, max: 239558 }, 
         }
     ],
   },
@@ -71,22 +71,22 @@ export const SCENARIOS: Scenario[] = [
     
     financials: {
         worst: {
-            revenue: 2047060, 
-            mabaatShare: 2047060 * 0.30,
-            netIncome: 2047060 * 0.70, 
-            roi: 12.2
+            revenue: 1842354, 
+            mabaatShare: 552706,
+            netIncome: 1089988, 
+            roi: 6.1
         },
         base: {
-            revenue: 2154800, 
-            mabaatShare: 2154800 * 0.30,
-            netIncome: 2154800 * 0.70, 
-            roi: 12.8
+            revenue: 1939320, 
+            mabaatShare: 581796,
+            netIncome: 1147356, 
+            roi: 6.4
         },
         best: {
-            revenue: 2262540, 
-            mabaatShare: 2262540 * 0.30,
-            netIncome: 2262540 * 0.70, 
-            roi: 13.5
+            revenue: 2036286, 
+            mabaatShare: 610886,
+            netIncome: 1204724, 
+            roi: 6.7
         }
     },
 
@@ -100,14 +100,14 @@ export const SCENARIOS: Scenario[] = [
         { 
             name: '1BR (STR) Layouts', 
             count: 8, 
-            avgPrice: 194600,
-            priceRange: { min: 184870, avg: 194600, max: 204330 },
+            avgPrice: 175140,
+            priceRange: { min: 166383, avg: 175140, max: 183897 },
         },
         { 
             name: '1BR (LTR) Layouts', 
             count: 4, 
-            avgPrice: 149500,
-            priceRange: { min: 142025, avg: 149500, max: 156975 },
+            avgPrice: 134550,
+            priceRange: { min: 127823, avg: 134550, max: 141278 },
         }
     ],
   },
@@ -120,22 +120,22 @@ export const SCENARIOS: Scenario[] = [
     
     financials: {
         worst: {
-            revenue: 2069100, 
-            mabaatShare: 2069100 * 0.30,
-            netIncome: 2069100 * 0.70, 
-            roi: 15.6
+            revenue: 1862190, 
+            mabaatShare: 558657,
+            netIncome: 1121739, 
+            roi: 9.4
         },
         base: {
-            revenue: 2178000, 
-            mabaatShare: 2178000 * 0.30,
-            netIncome: 2178000 * 0.70, 
-            roi: 16.4
+            revenue: 1960200, 
+            mabaatShare: 588060,
+            netIncome: 1180777, 
+            roi: 9.8
         },
         best: {
-            revenue: 2286900, 
-            mabaatShare: 2286900 * 0.30,
-            netIncome: 2286900 * 0.70, 
-            roi: 17.2
+            revenue: 2058210, 
+            mabaatShare: 617463,
+            netIncome: 1239816, 
+            roi: 10.3
         }
     },
 
@@ -149,14 +149,14 @@ export const SCENARIOS: Scenario[] = [
         { 
             name: '2BR (STR) Layouts', 
             count: 5, 
-            avgPrice: 283500,
-            priceRange: { min: 269325, avg: 283500, max: 297675 },
+            avgPrice: 255150,
+            priceRange: { min: 242393, avg: 255150, max: 267908 },
         },
         { 
             name: '2BR (LTR) Layouts', 
             count: 3, 
-            avgPrice: 253500,
-            priceRange: { min: 240825, avg: 253500, max: 266175 },
+            avgPrice: 228150,
+            priceRange: { min: 216743, avg: 228150, max: 239558 },
         }
     ],
   },
@@ -169,22 +169,22 @@ export const SCENARIOS: Scenario[] = [
     
     financials: {
         worst: {
-            revenue: 2825585, 
-            mabaatShare: 2825585 * 0.30,
-            netIncome: 2825585 * 0.70, 
-            roi: 14.5
+            revenue: 2543027, 
+            mabaatShare: 762908,
+            netIncome: 1398665, 
+            roi: 7.2
         },
         base: {
-            revenue: 2974300, 
-            mabaatShare: 2974300 * 0.30,
-            netIncome: 2974300 * 0.70, 
-            roi: 15.2
+            revenue: 2676870, 
+            mabaatShare: 803061,
+            netIncome: 1472278, 
+            roi: 7.6
         },
         best: {
-            revenue: 3123015, 
-            mabaatShare: 3123015 * 0.30,
-            netIncome: 3123015 * 0.70, 
-            roi: 16.0
+            revenue: 2810714, 
+            mabaatShare: 843214,
+            netIncome: 1545893, 
+            roi: 7.9
         }
     },
 
@@ -198,14 +198,14 @@ export const SCENARIOS: Scenario[] = [
         { 
             name: '1BR Short-Term layouts', 
             count: 8, 
-            avgPrice: 194600,
-            priceRange: { min: 184870, avg: 194600, max: 204330 },
+            avgPrice: 175140,
+            priceRange: { min: 166383, avg: 175140, max: 183897 },
         },
         { 
             name: '2BR Short-Term layouts', 
             count: 5, 
-            avgPrice: 283500,
-            priceRange: { min: 269325, avg: 283500, max: 297675 },
+            avgPrice: 255150,
+            priceRange: { min: 242393, avg: 255150, max: 267908 },
         }
     ],
   },
@@ -218,22 +218,22 @@ export const SCENARIOS: Scenario[] = [
     
     financials: {
         worst: {
-            revenue: 1290575, 
-            mabaatShare: 1290575 * 0.30,
-            netIncome: 1290575 * 0.70, 
-            roi: 12.3
+            revenue: 1161518, 
+            mabaatShare: 348455,
+            netIncome: 813063, 
+            roi: 7.7
         },
         base: {
-            revenue: 1358500, 
-            mabaatShare: 1358500 * 0.30,
-            netIncome: 1358500 * 0.70, 
-            roi: 12.9
+            revenue: 1222650, 
+            mabaatShare: 366795,
+            netIncome: 855855, 
+            roi: 8.2
         },
         best: {
-            revenue: 1426425, 
-            mabaatShare: 1426425 * 0.30,
-            netIncome: 1426425 * 0.70, 
-            roi: 13.6
+            revenue: 1283783, 
+            mabaatShare: 385135,
+            netIncome: 898648, 
+            roi: 8.6
         }
     },
 
@@ -303,7 +303,7 @@ export const COMPARISON_LINKS: Record<string, ComparisonLink[]> = {
         title: '1 Bedroom Furnished + Terrace in Hittin',
         location: 'Al Hittin',
         area: '100 sqm',
-        price: 132825,
+        price: 119543,
         url: 'https://rightcompound.com/hittin-residential-compound-riyadh',
         photosUrl: 'https://www.canva.com/design/DAG84DmPBK4/ndxj8ASiUXX9SSpUr353YA/edit?utm_content=DAG84DmPBK4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton'
     },
@@ -313,7 +313,7 @@ export const COMPARISON_LINKS: Record<string, ComparisonLink[]> = {
         title: '2 Bedroom Premium in Hittin, Riyadh',
         location: 'Al Hittin',
         area: '145 sqm',
-        price: 185000,
+        price: 166500,
         url: '#',
         photosUrl: '#'
     }
@@ -364,5 +364,5 @@ export const COMPARISON_LINKS: Record<string, ComparisonLink[]> = {
   ]
 };
 
-export const MABAAT_SHARE_PERCENTAGE = 0.15; // Management fee remains 15%
+export const MABAAT_SHARE_PERCENTAGE = 0.30; // Management fee remains 30%
 export const BRANCHES: any[] = [];
