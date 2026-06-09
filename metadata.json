@@ -1,0 +1,6 @@
+{
+  "name": "Shaheqa 12 Project Financial Dashboard",
+  "description": "Property management dashboard for Mathwaa studies.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
