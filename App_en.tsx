@@ -183,7 +183,7 @@ const App_en: React.FC<{ onToggleLanguage: () => void }> = ({ onToggleLanguage }
   const [activeModel, setActiveModel] = useState<'ltr' | 'str' | 'combined'>('combined');
   const [activeCase, setActiveCase] = useState<CaseType>('base');
   const [occupancyRate, setOccupancyRate] = useState<number>(1.0); // 1 = 100%
-  const [mabaatPercentage] = useState<number>(0.15); // Management fee 15%
+  const [mabaatPercentage] = useState<number>(0.30); // Management fee 30%
   
   const activeScenario = SCENARIOS.find(s => s.id === activeModel) || SCENARIOS[0];
   const baseFinancials = activeScenario.financials[activeCase];
@@ -279,7 +279,7 @@ const App_en: React.FC<{ onToggleLanguage: () => void }> = ({ onToggleLanguage }
   const ledgerItems = [
     { category: `Mathwaa Management Fee (${Math.round(mabaatPercentage * 100)}%)`, amount: effectiveMabaat, color: 'bg-purple-400' },
     ...(vatAmount > 0 ? [{ category: 'VAT (15%)', amount: vatAmount, color: 'bg-[#D4AF37]' }] : []),
-    { category: "Owner's Net Net Income (85% share)", amount: effectiveNetIncome, color: 'bg-emerald-400', highlight: true }
+    { category: `Owner's Net Net Income (${Math.round((1 - mabaatPercentage) * 100)}% share)`, amount: effectiveNetIncome, color: 'bg-emerald-400', highlight: true }
   ];
 
   // dynamic chart generation based on currently selected scenario
@@ -497,7 +497,7 @@ const App_en: React.FC<{ onToggleLanguage: () => void }> = ({ onToggleLanguage }
                                 <span className="text-[10px] font-bold uppercase tracking-widest text-white/50">Exclusive Mgmt Fee:</span>
                                 <div className="p-1 rounded-full flex relative bg-white/10">
                                     <div className="px-4 py-1.5 text-xs sm:text-sm font-bold rounded-full bg-white text-black shadow-sm ring-1 ring-black/5 cursor-default">
-                                        15% Mathwaa Management Fee
+                                        30% Mathwaa Management Fee
                                     </div>
                                 </div>
                             </div>

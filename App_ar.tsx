@@ -183,7 +183,7 @@ const App_ar: React.FC<{ onToggleLanguage: () => void }> = ({ onToggleLanguage }
   const [activeModel, setActiveModel] = useState<'ltr' | 'str' | 'combined'>('combined');
   const [activeCase, setActiveCase] = useState<CaseType>('base');
   const [occupancyRate, setOccupancyRate] = useState<number>(1.0); // 1 = 100%
-  const [mabaatPercentage] = useState<number>(0.15); // 15%
+  const [mabaatPercentage] = useState<number>(0.30); // 30%
  
   const activeScenario = SCENARIOS.find(s => s.id === activeModel) || SCENARIOS[0];
   const baseFinancials = activeScenario.financials[activeCase];
@@ -312,7 +312,7 @@ const App_ar: React.FC<{ onToggleLanguage: () => void }> = ({ onToggleLanguage }
   const ledgerItems = [
     { category: `رسوم إدارة مَثوى (${Math.round(mabaatPercentage * 100)}٪)`, amount: effectiveMabaat, color: 'bg-purple-400' },
     ...(vatAmount > 0 ? [{ category: 'ضريبة القيمة المضافة (١٥٪)', amount: vatAmount, color: 'bg-amber-400' }] : []),
-    { category: 'صافي الدخل الصافي للمالك الأساسي (حصة ٨٥٪)', amount: effectiveNetIncome, color: 'bg-emerald-400', highlight: true }
+    { category: `صافي الدخل الصافي للمالك الأساسي (حصة ${Math.round((1 - mabaatPercentage) * 100)}٪)`, amount: effectiveNetIncome, color: 'bg-emerald-400', highlight: true }
   ];
 
   const getDynamicChartData = () => {
@@ -529,7 +529,7 @@ const App_ar: React.FC<{ onToggleLanguage: () => void }> = ({ onToggleLanguage }
                                 <span className="text-[10px] font-bold uppercase tracking-widest text-white/50">رسوم إدارة ثابتة:</span>
                                 <div className="p-1 rounded-full flex relative bg-white/10">
                                     <div className="px-4 py-1.5 text-xs sm:text-sm font-bold rounded-full bg-white text-black shadow-sm ring-1 ring-black/5 cursor-default font-cairo">
-                                        ١٥٪ رسوم إدارة مَثوى
+                                        ٣٠٪ رسوم إدارة مَثوى
                                     </div>
                                 </div>
                             </div>

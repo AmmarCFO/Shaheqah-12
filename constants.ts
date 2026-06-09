@@ -11,20 +11,20 @@ export const SCENARIOS: Scenario[] = [
     financials: {
         worst: {
             revenue: 4116160, 
-            mabaatShare: 4116160 * 0.15, 
-            netIncome: 4116160 * 0.85, 
+            mabaatShare: 4116160 * 0.30, 
+            netIncome: 4116160 * 0.70, 
             roi: 13.7
         },
         base: {
             revenue: 4332800,
-            mabaatShare: 4332800 * 0.15, 
-            netIncome: 4332800 * 0.85, 
+            mabaatShare: 4332800 * 0.30, 
+            netIncome: 4332800 * 0.70, 
             roi: 14.4
         },
         best: {
             revenue: 4549440, 
-            mabaatShare: 4549440 * 0.15, 
-            netIncome: 4549440 * 0.85, 
+            mabaatShare: 4549440 * 0.30, 
+            netIncome: 4549440 * 0.70, 
             roi: 15.2
         }
     },
@@ -72,20 +72,20 @@ export const SCENARIOS: Scenario[] = [
     financials: {
         worst: {
             revenue: 2047060, 
-            mabaatShare: 2047060 * 0.15,
-            netIncome: 2047060 * 0.85, 
+            mabaatShare: 2047060 * 0.30,
+            netIncome: 2047060 * 0.70, 
             roi: 12.2
         },
         base: {
             revenue: 2154800, 
-            mabaatShare: 2154800 * 0.15,
-            netIncome: 2154800 * 0.85, 
+            mabaatShare: 2154800 * 0.30,
+            netIncome: 2154800 * 0.70, 
             roi: 12.8
         },
         best: {
             revenue: 2262540, 
-            mabaatShare: 2262540 * 0.15,
-            netIncome: 2262540 * 0.85, 
+            mabaatShare: 2262540 * 0.30,
+            netIncome: 2262540 * 0.70, 
             roi: 13.5
         }
     },
@@ -121,20 +121,20 @@ export const SCENARIOS: Scenario[] = [
     financials: {
         worst: {
             revenue: 2069100, 
-            mabaatShare: 2069100 * 0.15,
-            netIncome: 2069100 * 0.85, 
+            mabaatShare: 2069100 * 0.30,
+            netIncome: 2069100 * 0.70, 
             roi: 15.6
         },
         base: {
             revenue: 2178000, 
-            mabaatShare: 2178000 * 0.15,
-            netIncome: 2178000 * 0.85, 
+            mabaatShare: 2178000 * 0.30,
+            netIncome: 2178000 * 0.70, 
             roi: 16.4
         },
         best: {
             revenue: 2286900, 
-            mabaatShare: 2286900 * 0.15,
-            netIncome: 2286900 * 0.85, 
+            mabaatShare: 2286900 * 0.30,
+            netIncome: 2286900 * 0.70, 
             roi: 17.2
         }
     },
@@ -170,20 +170,20 @@ export const SCENARIOS: Scenario[] = [
     financials: {
         worst: {
             revenue: 2825585, 
-            mabaatShare: 2825585 * 0.15,
-            netIncome: 2825585 * 0.85, 
+            mabaatShare: 2825585 * 0.30,
+            netIncome: 2825585 * 0.70, 
             roi: 14.5
         },
         base: {
             revenue: 2974300, 
-            mabaatShare: 2974300 * 0.15,
-            netIncome: 2974300 * 0.85, 
+            mabaatShare: 2974300 * 0.30,
+            netIncome: 2974300 * 0.70, 
             roi: 15.2
         },
         best: {
             revenue: 3123015, 
-            mabaatShare: 3123015 * 0.15,
-            netIncome: 3123015 * 0.85, 
+            mabaatShare: 3123015 * 0.30,
+            netIncome: 3123015 * 0.70, 
             roi: 16.0
         }
     },
@@ -219,20 +219,20 @@ export const SCENARIOS: Scenario[] = [
     financials: {
         worst: {
             revenue: 1290575, 
-            mabaatShare: 1290575 * 0.15,
-            netIncome: 1290575 * 0.85, 
+            mabaatShare: 1290575 * 0.30,
+            netIncome: 1290575 * 0.70, 
             roi: 12.3
         },
         base: {
             revenue: 1358500, 
-            mabaatShare: 1358500 * 0.15,
-            netIncome: 1358500 * 0.85, 
+            mabaatShare: 1358500 * 0.30,
+            netIncome: 1358500 * 0.70, 
             roi: 12.9
         },
         best: {
             revenue: 1426425, 
-            mabaatShare: 1426425 * 0.15,
-            netIncome: 1426425 * 0.85, 
+            mabaatShare: 1426425 * 0.30,
+            netIncome: 1426425 * 0.70, 
             roi: 13.6
         }
     },
