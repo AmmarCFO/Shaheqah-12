@@ -72,25 +72,41 @@ const SegmentedControl: React.FC<{
 
 const DigitalLedger: React.FC<{ 
     revenue: number; 
-    items: { category: string; amount: number; color?: string; highlight?: boolean }[];
+    items: { category: string; amount: number; color?: string; highlight?: boolean; percent?: number; subtotal?: boolean }[];
     activeCase?: CaseType;
 }> = ({ revenue, items, activeCase = 'base' }) => {
     return (
         <div className="w-full space-y-6">
             <div className="flex justify-between items-end border-b border-white/10 pb-4">
                 <div>
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-white/40 mb-0.5 block animate-pulse">Total Pro-Rata Revenue</span>
-                    <span className="text-xl sm:text-2xl font-bold text-white tracking-tight tabular-nums">{formatCurrency(revenue)}</span>
+                     <span className="text-[10px] font-bold uppercase tracking-widest text-white/40 mb-0.5 block animate-pulse">Total Pro-Rata Revenue</span>
+                     <span className="text-xl sm:text-2xl font-bold text-white tracking-tight tabular-nums">{formatCurrency(revenue)}</span>
                 </div>
                 <div className="text-right">
-                    <span className="text-[10px] font-medium text-white/40 bg-white/5 px-2 py-0.5 rounded border border-white/5">Active Occupancy</span>
+                     <span className="text-[10px] font-medium text-white/40 bg-white/5 px-2 py-0.5 rounded border border-white/5">Active Occupancy</span>
                 </div>
             </div>
             
             <div className="space-y-4">
                 {items.map((item, idx) => {
-                    const percent = revenue > 0 ? Math.round((item.amount / revenue) * 100) : 0;
+                    const percent = item.percent !== undefined ? item.percent : (revenue > 0 ? Math.round((item.amount / revenue) * 100) : 0);
                     
+                    if (item.subtotal) {
+                        return (
+                            <div key={idx} className="border-t border-b border-white/10 py-3.5 my-2 px-1">
+                                <div className="flex justify-between items-center">
+                                    <div className="flex items-center gap-2">
+                                        <div className={`w-2 h-2 rounded-full ${item.color || 'bg-white'} shadow-[0_0_6px_currentColor]`}></div>
+                                        <span className="text-sm font-bold text-sky-200 tracking-wide">{item.category}</span>
+                                    </div>
+                                    <div className="text-right">
+                                        <span className="block text-base font-black text-white tabular-nums">{formatCurrency(item.amount)}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        );
+                    }
+
                     if (item.highlight) {
                          const ledgerHighlightStyles = {
                              worst: {
@@ -183,7 +199,7 @@ const App_en: React.FC<{ onToggleLanguage: () => void }> = ({ onToggleLanguage }
   const [activeModel, setActiveModel] = useState<'ltr' | 'str' | 'combined'>('combined');
   const [activeCase, setActiveCase] = useState<CaseType>('base');
   const [occupancyRate, setOccupancyRate] = useState<number>(1.0); // 1 = 100%
-  const [mabaatPercentage] = useState<number>(0.30); // Management fee 30%
+  const [mabaatPercentage] = useState<number>(0.25); // Management fee 25%
   
   const activeScenario = SCENARIOS.find(s => s.id === activeModel) || SCENARIOS[0];
   const baseFinancials = activeScenario.financials[activeCase];
@@ -191,7 +207,6 @@ const App_en: React.FC<{ onToggleLanguage: () => void }> = ({ onToggleLanguage }
   // Dynamic Calculations
   const effectiveOccupancy = occupancyRate;
   const effectiveRevenue = Math.round(baseFinancials.revenue * effectiveOccupancy);
-  const effectiveMabaat = Math.round(effectiveRevenue * mabaatPercentage);
 
   const strRatio = activeModel === 'combined' 
     ? 2974300 / 4332800 
@@ -201,7 +216,15 @@ const App_en: React.FC<{ onToggleLanguage: () => void }> = ({ onToggleLanguage }
   
   // 15% OTA commission deduction for short-term rental (STR) portion
   const otaCommissionAmount = Math.round(strRevenue * 0.15);
-  const effectiveNetIncome = effectiveRevenue - effectiveMabaat - otaCommissionAmount;
+
+  // Mathwaa management fee is 25% of the remaining revenue AFTER deducting OTA fees and VAT
+  const remainingPostDeductions = effectiveRevenue - otaCommissionAmount - vatAmount;
+  const effectiveMabaat = remainingPostDeductions > 0 
+    ? Math.round(remainingPostDeductions * mabaatPercentage) 
+    : 0;
+  
+  // Owner net net income is the remainder
+  const effectiveNetIncome = Math.max(0, remainingPostDeductions - effectiveMabaat);
   
   const caseOptions = [
       { 
@@ -279,12 +302,15 @@ const App_en: React.FC<{ onToggleLanguage: () => void }> = ({ onToggleLanguage }
   };
 
   // Build ledger items
-  const ownerPercent = effectiveRevenue > 0 ? Math.round((effectiveNetIncome / effectiveRevenue) * 100) : 0;
+  const postDeductionsBase = effectiveRevenue - otaCommissionAmount - vatAmount;
+  const ownerPercent = postDeductionsBase > 0 ? Math.round((effectiveNetIncome / postDeductionsBase) * 100) : 0;
+  const mathwaaPercent = postDeductionsBase > 0 ? Math.round((effectiveMabaat / postDeductionsBase) * 100) : 0;
   const ledgerItems = [
     ...(otaCommissionAmount > 0 ? [{ category: 'OTA Booking Commission (15% of STR)', amount: otaCommissionAmount, color: 'bg-amber-500' }] : []),
     ...(vatAmount > 0 ? [{ category: 'VAT (15%)', amount: vatAmount, color: 'bg-[#D4AF37]' }] : []),
-    { category: `Mathwaa Management Fee (${Math.round(mabaatPercentage * 100)}%)`, amount: effectiveMabaat, color: 'bg-purple-400' },
-    { category: `Owner's Net Net Income (${ownerPercent}% share)`, amount: effectiveNetIncome, color: 'bg-emerald-400', highlight: true }
+    { category: 'Net Revenue', amount: postDeductionsBase, color: 'bg-sky-400', subtotal: true },
+    { category: `Mathwaa Management Fee (${mathwaaPercent}%)`, amount: effectiveMabaat, color: 'bg-purple-400', percent: mathwaaPercent },
+    { category: "Owner's Net Net Income", amount: effectiveNetIncome, color: 'bg-emerald-400', highlight: true, percent: ownerPercent }
   ];
 
   // dynamic chart generation based on currently selected scenario
@@ -502,7 +528,7 @@ const App_en: React.FC<{ onToggleLanguage: () => void }> = ({ onToggleLanguage }
                                 <span className="text-[10px] font-bold uppercase tracking-widest text-white/50">Exclusive Mgmt Fee:</span>
                                 <div className="p-1 rounded-full flex relative bg-white/10">
                                     <div className="px-4 py-1.5 text-xs sm:text-sm font-bold rounded-full bg-white text-black shadow-sm ring-1 ring-black/5 cursor-default">
-                                        30% Mathwaa Management Fee
+                                        25% Mathwaa Management Fee
                                     </div>
                                 </div>
                             </div>

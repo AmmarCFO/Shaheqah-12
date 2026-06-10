@@ -364,5 +364,5 @@ export const COMPARISON_LINKS: Record<string, ComparisonLink[]> = {
   ]
 };
 
-export const MABAAT_SHARE_PERCENTAGE = 0.30; // Management fee remains 30%
+export const MABAAT_SHARE_PERCENTAGE = 0.25; // Management fee remains 25%
 export const BRANCHES: any[] = [];
